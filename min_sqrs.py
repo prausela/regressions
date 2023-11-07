@@ -29,7 +29,7 @@ def min_sqrs(X: np.ndarray, K_fs: list[Callable[[Any], Any]], Y: np.ndarray) -> 
     
 def square_error(Y: np.ndarray, F: np.ndarray) -> float:
     E     = Y - F
-    E     = E * E
+    E     = E.T.dot(E)
     error = E.sum()
     return error 
 
