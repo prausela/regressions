@@ -10,8 +10,7 @@ def __evaluate_X_in_K_fs__(X: np.ndarray, K_fs: list[Callable[[Any], Any]]) -> n
 
     for i in range(K_fs_len):
         vec_f = np.vectorize(pyfunc=K_fs[i])
-        
-        f_X[:, i].flat = vec_f(X[i])
+        f_X[:, i].flat = vec_f(X[:, i])
 
     return f_X
 
