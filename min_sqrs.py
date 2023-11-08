@@ -25,12 +25,3 @@ def min_sqrs(X: np.ndarray, K_fs: list[Callable[[Any], Any]], Y: np.ndarray) -> 
     K = p_inv_X.dot(f_X.T).dot(Y)
 
     return K
-    
-def square_error(Y: np.ndarray, F: np.ndarray) -> float:
-    E     = Y - F
-    E     = E.T.dot(E)
-    error = E.sum()
-    return error 
-
-def mean_square_error(Y: np.ndarray, F: np.ndarray) -> float:
-    return square_error(Y, F) / Y.size
